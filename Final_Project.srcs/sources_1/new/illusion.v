@@ -1,26 +1,13 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/20/2026 12:08:33 AM
-// Design Name: 
-// Module Name: illusion
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module illusion(
+input BOARDCLK,
+input [15:0] DATA,
+output wire [6:0] seg,
+output wire [3:0] ONECOLD
 
     );
+    wire [1:0] Q;
+    wire [3:0] W;
+    wire FASTCLK;
+    
 endmodule
