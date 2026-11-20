@@ -9,5 +9,7 @@ output wire [3:0] ONECOLD
     wire [1:0] Q;
     wire [3:0] W;
     wire FASTCLK;
-    
+    frequency_divider(BOARDCLK, FASTCLK);
+    cold_fsm(FASTCLK,ONECOLD,Q);
+    sevenseg(W,seg);
 endmodule
