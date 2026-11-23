@@ -1,26 +1,11 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/23/2026 04:45:15 PM
-// Design Name: 
-// Module Name: squarefsm
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 
 module squarefsm(
-
+input CLK,RST_N,GO,ZERO,
+output reg WE,
+output reg [2:0] WADDR,
+output reg [2:0] RADDR_X, RADDR_Y, WSEL,
+output reg SUB, DONE
     );
 endmodule
