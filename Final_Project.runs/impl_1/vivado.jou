@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Tue Nov 24 08:37:16 2026
+# Process ID         : 54872
+# Current directory  : D:/EE 2742/EE-2742-Final-Project/Final_Project.runs/impl_1
+# Command line       : vivado.exe -log squarefsm.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source squarefsm.tcl -notrace
+# Log file           : D:/EE 2742/EE-2742-Final-Project/Final_Project.runs/impl_1/squarefsm.vdi
+# Journal file       : D:/EE 2742/EE-2742-Final-Project/Final_Project.runs/impl_1\vivado.jou
+# Running On         : SubhaSree
+# Platform           : Windows 11
+# Operating System   : 26300
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i9-11900H @ 2.50GHz
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 34065 MB
+# Swap memory        : 32530 MB
+# Total Virtual      : 66596 MB
+# Available Virtual  : 4684 MB
+#-----------------------------------------------------------
+source squarefsm.tcl -notrace
