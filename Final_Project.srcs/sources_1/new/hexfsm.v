@@ -18,6 +18,9 @@ output hex_done
     next_state = 2'b01;
     end
     2'b01: begin
+    next_state = 2'b10;
+    end
+    2'b10: begin
     next_state = 2'b11;
     end
     2'b11: begin
