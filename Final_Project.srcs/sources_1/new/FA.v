@@ -5,5 +5,5 @@ output wire SUM, COUT
 
     );
    assign SUM = A^B^C;
-   assign cout = (A&B) | (C & (A^B));
+   assign COUT = (A&B) | (C & (A^B));
 endmodule

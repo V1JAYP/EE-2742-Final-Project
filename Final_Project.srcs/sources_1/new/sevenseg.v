@@ -8,7 +8,7 @@ output reg [6:0] sout
     
 always @(*) begin
 case(bin)
-0: sout = 7'b0000000;
+0: sout = 7'b0000001;
 1: sout = 7'b1001111;
 2: sout = 7'b0010010;
 3: sout = 7'b0000110;
@@ -16,7 +16,7 @@ case(bin)
 5: sout = 7'b0100100;
 6:  sout = 7'b0100000;
 7: sout = 7'b0001111;
-8: sout = 7'b0000001;
+8: sout = 7'b0000000;
 9: sout = 7'b0000100;
 10: sout = 7'b0001000;
 11: sout = 7'b1100000;

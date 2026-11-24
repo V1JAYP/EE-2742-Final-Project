@@ -11,7 +11,7 @@ output COUT
     );
 
 
-wire [7:0] C;
+wire [8:0] C[0] = CIN;
 
 FA fa0(C1[0],C2[0],CIN,SUM[0], C[1]);
 FA fa1(C1[0],C2[0],CIN,SUM[0], C[1]);
