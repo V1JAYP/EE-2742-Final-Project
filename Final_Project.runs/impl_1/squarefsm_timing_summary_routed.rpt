@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
-| Date         : Tue Nov 24 08:39:23 2026
+| Date         : Tue Nov 24 10:28:36 2026
 | Host         : SubhaSree running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file squarefsm_timing_summary_routed.rpt -pb squarefsm_timing_summary_routed.pb -rpx squarefsm_timing_summary_routed.rpx -warn_on_violation
 | Design       : squarefsm

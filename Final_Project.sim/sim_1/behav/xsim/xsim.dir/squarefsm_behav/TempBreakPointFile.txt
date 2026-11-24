@@ -1,1 +1,2 @@
 Breakpoint File Version 1.0
+17,true,"D:/EE 2742/EE-2742-Final-Project/Final_Project.srcs/sources_1/new/squarefsm.v"

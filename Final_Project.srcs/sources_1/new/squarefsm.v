@@ -19,7 +19,7 @@ output DONE
     assign adder_a =
         (state == 4'b0101) ? DATA_X :
         (state == 4'b0110) ? DATA_Z :
-                             8'd0;
+   8'd0;
 
     assign adder_b =
         (state == 4'b0101) ? DATA_Y :
