@@ -60,6 +60,7 @@ set_param checkpoint.writeSynthRtdsInDcp 1
 set_param general.usePosixSpawnForFork 1
 set_param chipscope.maxJobs 4
 set_param synth.incrementalSynthesisCache C:/Users/vijay/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-57408-SubhaSree/incrSyn
+set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -105,6 +106,8 @@ read_xdc {{D:/EE 2742/EE-2742-Final-Project/Final_Project.srcs/constrs_1/new/mai
 set_property used_in_implementation false [get_files {{D:/EE 2742/EE-2742-Final-Project/Final_Project.srcs/constrs_1/new/main.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental {D:/EE 2742/EE-2742-Final-Project/Final_Project.srcs/utils_1/imports/synth_1/squarefsm.dcp}
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

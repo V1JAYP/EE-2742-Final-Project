@@ -31,8 +31,8 @@ output [7:0] X,Y,Z
     reg8b r6 (.L(L[6]), .N(WDATA), .CLK(CLK), .PRS_N(1'b1), .CLR_N(RST_N), .Q(q6));
     reg8b r7 (.L(L[7]), .N(WDATA), .CLK(CLK), .PRS_N(1'b1), .CLR_N(RST_N), .Q(q7));
     
-        mux8_to_1 port_x (.s(RADDR_X), .d000(q0), .d001(q1), .d010(q2), .d011(q3), .d100(q4), .d101(q5), .d110(q6), .d111(q7), .y(X));
-    mux8_to_1 port_y (.s(RADDR_Y), .d000(q0), .d001(q1), .d010(q2), .d011(q3), .d100(q4), .d101(q5), .d110(q6), .d111(q7), .y(Y));
-    mux8_to_1 port_z (.s(RADDR_Z), .d000(q0), .d001(q1), .d010(q2), .d011(q3), .d100(q4), .d101(q5), .d110(q6), .d111(q7), .y(Z));
+    mux8_to_1 port_x (.s(RADDR_X), .d0(q0), .d1(q1), .d2(q2), .d3(q3), .d4(q4), .d5(q5), .d6(q6), .d7(q7), .y(X));
+    mux8_to_1 port_y (.s(RADDR_Y), .d0(q0), .d1(q1), .d2(q2), .d3(q3), .d4(q4), .d5(q5), .d6(q6), .d7(q7), .y(Y));
+    mux8_to_1 port_z (.s(RADDR_Z), .d0(q0), .d1(q1), .d2(q2), .d3(q3), .d4(q4), .d5(q5), .d6(q6), .d7(q7), .y(Z));
     
 endmodule

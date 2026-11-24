@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
-| Date         : Mon Nov 23 22:24:47 2026
+| Date         : Tue Nov 24 08:38:46 2026
 | Host         : SubhaSree running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file squarefsm_control_sets_placed.rpt
 | Design       : squarefsm
@@ -62,7 +62,7 @@ Table of Contents
 | No           | No                    | Yes                    |               1 |            1 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              50 |           18 |
+| Yes          | No                    | Yes                    |              50 |           15 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,35 +70,35 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------------------+-----------------------------------------+-----------------------+------------------+----------------+--------------+
-|                Clock Signal               |              Enable Signal              |    Set/Reset Signal   | Slice Load Count | Bel Load Count | Bels / Slice |
-+-------------------------------------------+-----------------------------------------+-----------------------+------------------+----------------+--------------+
-|  BOARDCLK_IBUF_BUFG                       |                                         |                       |                1 |              1 |         1.00 |
-|  BOARDCLK_IBUF_BUFG                       |                                         | registers/r0/r6/RST_N |                1 |              1 |         1.00 |
-|  display/adder/genblk1[10].tffgiv/CLKS_10 |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[12].tffgiv/CLKS_12 |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[11].tffgiv/CLKS_11 |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[15].tffgiv/CLKS_15 |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[14].tffgiv/CLKS_14 |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[2].tffgiv/CLKS_2   |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[13].tffgiv/CLKS_13 |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[1].tffgiv/CLKS_1   |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[4].tffgiv/CLKS_4   |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[3].tffgiv/CLKS_3   |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[8].tffgiv/CLKS_8   |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[9].tffgiv/CLKS_9   |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[5].tffgiv/CLKS_5   |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[6].tffgiv/CLKS_6   |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[7].tffgiv/CLKS_7   |                                         |                       |                1 |              1 |         1.00 |
-|  display/adder/genblk1[16].tffgiv/Q_reg_0 |                                         |                       |                1 |              2 |         2.00 |
-|  BOARDCLK_IBUF_BUFG                       | input_latched0                          | registers/r0/r6/RST_N |                2 |              4 |         2.00 |
-|  BOARDCLK_IBUF_BUFG                       | hex_unit/FSM_onehot_state_reg_n_0_[2]   | registers/r0/r6/RST_N |                1 |              4 |         4.00 |
-|  BOARDCLK_IBUF_BUFG                       | hex_unit/FSM_onehot_state[3]_i_1_n_0    | registers/r0/r6/RST_N |                1 |              4 |         4.00 |
-|  BOARDCLK_IBUF_BUFG                       | hex_unit/FSM_onehot_state_reg_n_0_[1]   | registers/r0/r6/RST_N |                2 |              4 |         2.00 |
-|  BOARDCLK_IBUF_BUFG                       | registers/r2/r7/FSM_onehot_state_reg[6] | registers/r0/r6/RST_N |                2 |              8 |         4.00 |
-|  BOARDCLK_IBUF_BUFG                       | registers/r1/r7/A__0                    | registers/r0/r6/RST_N |                3 |              8 |         2.67 |
-|  BOARDCLK_IBUF_BUFG                       | p_4_in                                  | registers/r0/r6/RST_N |                4 |              8 |         2.00 |
-|  BOARDCLK_IBUF_BUFG                       | hex_unit/E[0]                           | registers/r0/r6/RST_N |                3 |             10 |         3.33 |
-+-------------------------------------------+-----------------------------------------+-----------------------+------------------+----------------+--------------+
++----------------------------------------+-----------------------------------------+-----------------------+------------------+----------------+--------------+
+|              Clock Signal              |              Enable Signal              |    Set/Reset Signal   | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------------------------+-----------------------------------------+-----------------------+------------------+----------------+--------------+
+|  BOARDCLK_IBUF_BUFG                    |                                         |                       |                1 |              1 |         1.00 |
+|  BOARDCLK_IBUF_BUFG                    |                                         | registers/r0/r6/RST_N |                1 |              1 |         1.00 |
+|  display/fd/genblk1[14].tffgiv/CLKS_14 |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[11].tffgiv/CLKS_11 |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[10].tffgiv/CLKS_10 |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[13].tffgiv/CLKS_13 |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[12].tffgiv/CLKS_12 |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[3].tffgiv/CLKS_3   |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[2].tffgiv/CLKS_2   |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[1].tffgiv/CLKS_1   |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[4].tffgiv/CLKS_4   |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[15].tffgiv/CLKS_15 |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[7].tffgiv/CLKS_7   |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[6].tffgiv/CLKS_6   |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[8].tffgiv/CLKS_8   |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[5].tffgiv/CLKS_5   |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[9].tffgiv/CLKS_9   |                                         |                       |                1 |              1 |         1.00 |
+|  display/fd/genblk1[16].tffgiv/Q_reg_0 |                                         |                       |                1 |              2 |         2.00 |
+|  BOARDCLK_IBUF_BUFG                    | input_latched0                          | registers/r0/r6/RST_N |                1 |              4 |         4.00 |
+|  BOARDCLK_IBUF_BUFG                    | hex_unit/FSM_onehot_state_reg_n_0_[2]   | registers/r0/r6/RST_N |                1 |              4 |         4.00 |
+|  BOARDCLK_IBUF_BUFG                    | hex_unit/FSM_onehot_state[3]_i_1_n_0    | registers/r0/r6/RST_N |                1 |              4 |         4.00 |
+|  BOARDCLK_IBUF_BUFG                    | hex_unit/FSM_onehot_state_reg_n_0_[1]   | registers/r0/r6/RST_N |                1 |              4 |         4.00 |
+|  BOARDCLK_IBUF_BUFG                    | registers/r1/r7/A__0                    | registers/r0/r6/RST_N |                2 |              8 |         4.00 |
+|  BOARDCLK_IBUF_BUFG                    | registers/r2/r7/FSM_onehot_state_reg[6] | registers/r0/r6/RST_N |                2 |              8 |         4.00 |
+|  BOARDCLK_IBUF_BUFG                    | p_4_in                                  | registers/r0/r6/RST_N |                4 |              8 |         2.00 |
+|  BOARDCLK_IBUF_BUFG                    | hex_unit/E[0]                           | registers/r0/r6/RST_N |                3 |             10 |         3.33 |
++----------------------------------------+-----------------------------------------+-----------------------+------------------+----------------+--------------+
 
 

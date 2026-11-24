@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
-| Date             : Mon Nov 23 22:25:08 2026
+| Date             : Tue Nov 24 08:39:24 2026
 | Host             : SubhaSree running 64-bit major release  (build 9200)
 | Command          : report_power -file squarefsm_power_routed.rpt -pb squarefsm_power_summary_routed.pb -rpx squarefsm_power_routed.rpx
 | Design           : squarefsm
@@ -57,7 +57,7 @@ Table of Contents
 |   LUT as Logic |    <0.001 |       70 |     20800 |            0.34 |
 |   Register     |    <0.001 |       69 |     41600 |            0.17 |
 |   Others       |     0.000 |       36 |       --- |             --- |
-| Signals        |    <0.001 |      140 |       --- |             --- |
+| Signals        |    <0.001 |      141 |       --- |             --- |
 | I/O            |     0.025 |       19 |       106 |           17.92 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.099 |          |           |                 |
