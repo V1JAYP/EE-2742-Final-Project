@@ -14,6 +14,7 @@ output DONE
     wire [15:0] DISPLAY_DATA;
     reg [3:0] state, next_state, input_latched;
     reg go_prev;
+    assign start_pulse = GO & `go_prev;
     wire[7:0] adder_a, adder_b;
     assign adder_a =
         (state == 4'b0101) ? DATA_X :
@@ -24,25 +25,25 @@ output DONE
         (state == 4'b0101) ? DATA_Y :
         (state == 4'b0110) ? 8'hFF :
                              8'd0;
-
     regfile registers(
-        .WADDR(WADDR[2:0]),
-        .WEN(WEN),
-        .DATA_IN(DATA_IN),
         .CLK(BOARDCLK),
+        .RST_N(RST_N),
+        .WE(WEN),
+        .WADDR(WADDR[2:0]),
+        .WDATA(DATA_IN),
 
-        .XADDR(3'd1),
-        .YADDR(3'd0),
-        .ZADDR(3'd2),
+        .RADDR_X(3'd1),
+        .RADDR_Y(3'd0),
+        .RADDR_Z(3'd2),
 
-        .DATA_X(DATA_X),
-        .DATA_Y(DATA_Y),
-        .DATA_Z(DATA_Z)
+        .X(DATA_X),
+        .Y(DATA_Y),
+        .Z(DATA_Z)
     );
 
     RCA add_unit(
-        .A(adder_a),
-        .B(adder_b),
+        .C1(adder_a),
+        .C2(adder_b),
         .CIN(1'b0),
         .SUM(SUM),
         .COUT(COUT)
@@ -52,11 +53,11 @@ output DONE
         .CLK(BOARDCLK),
         .RST_N(RST_N),
         .SQUARE_DONE(SQUARE_DONE),
-        .VALUE(DATA_X),
+        .value(DATA_X),
 
-        .HEX_LO(hex_lo),
-        .HEX_HI(hex_hi),
-        .HEX_DONE(HEX_DONE)
+        .low(low),
+        .high(high),
+        .hex_done(hex_done)
     );
 
     assign WADDR =
@@ -101,7 +102,7 @@ output DONE
     illusion display(
         .BOARDCLK(BOARDCLK),
         .DATA(DISPLAY_DATA),
-        .SEGMENTS(segments),
+        .seg(segments),
         .ONECOLD(ONECOLD_RAW)
     );
 
