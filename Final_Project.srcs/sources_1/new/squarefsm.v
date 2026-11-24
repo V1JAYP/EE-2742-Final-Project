@@ -19,82 +19,29 @@ output DONE
     assign adder_a =
         (state == 4'b0101) ? DATA_X :
         (state == 4'b0110) ? DATA_Z :
-                             8'd0;
+   8'd0;
 
     assign adder_b =
         (state == 4'b0101) ? DATA_Y :
         (state == 4'b0110) ? 8'hFF :
                              8'd0;
-    regfile registers(
-        .CLK(BOARDCLK),
-        .RST_N(RST_N),
-        .WE(WEN),
-        .WADDR(WADDR[2:0]),
-        .WDATA(DATA_IN),
+    regfile registers( .CLK(BOARDCLK), .RST_N(RST_N),.WE(WEN), .WADDR(WADDR[2:0]), .WDATA(DATA_IN), .RADDR_X(3'd1), .RADDR_Y(3'd0),.RADDR_Z(3'd2), .X(DATA_X), .Y(DATA_Y), .Z(DATA_Z));
 
-        .RADDR_X(3'd1),
-        .RADDR_Y(3'd0),
-        .RADDR_Z(3'd2),
+    RCA add_unit(.C1(adder_a),.C2(adder_b),.CIN(1'b0),.SUM(SUM),.COUT(COUT));
 
-        .X(DATA_X),
-        .Y(DATA_Y),
-        .Z(DATA_Z)
-    );
+    hexfsm hex_unit(.CLK(BOARDCLK),.RST_N(RST_N),.SQUARE_DONE(SQUARE_DONE),.value(DATA_X),.low(low),.high(high),.hex_done(hex_done));
 
-    RCA add_unit(
-        .C1(adder_a),
-        .C2(adder_b),
-        .CIN(1'b0),
-        .SUM(SUM),
-        .COUT(COUT)
-    );
+    assign WADDR = (state == 4'b0001) ? 4'd0 : (state == 4'b0010 || state == 4'b0101) ? 4'd1 : (state == 4'b0011 || state == 4'b0110) ? 4'd2 : 4'd0;
 
-    hexfsm hex_unit(
-        .CLK(BOARDCLK),
-        .RST_N(RST_N),
-        .SQUARE_DONE(SQUARE_DONE),
-        .value(DATA_X),
+    assign WEN = (state == 4'b0001) || (state == 4'b0010) || (state == 4'b0011) || (state == 4'b0101) || (state == 4'b0110);
 
-        .low(low),
-        .high(high),
-        .hex_done(hex_done)
-    );
+    assign DATA_IN = (state == 4'b0001) ? {4'b0000, input_latched} : (state == 4'b0010) ? 8'd0 : (state == 4'b0011) ? DATA_Y : (state == 4'b0101 || state == 4'b0110) ? SUM : 8'd0;
 
-    assign WADDR =
-        (state == 4'b0001) ? 4'd0 :
-        (state == 4'b0010 || state == 4'b0101) ? 4'd1 :
-        (state == 4'b0011 || state == 4'b0110) ? 4'd2 :
-                                                  4'd0;
+    assign SQUARE_DONE = (state == 4'b0111) || (state == 4'b1000) || (state == 4'b1001);
 
-    assign WEN =
-        (state == 4'b0001) ||
-        (state == 4'b0010) ||
-        (state == 4'b0011) ||
-        (state == 4'b0101) ||
-        (state == 4'b0110);
+    assign DONE = (state == 4'b1000) || (state == 4'b1001);
 
-    assign DATA_IN =
-        (state == 4'b0001) ? {4'b0000, input_latched} :
-        (state == 4'b0010) ? 8'd0 :
-        (state == 4'b0011) ? DATA_Y :
-        (state == 4'b0101 || state == 4'b0110) ? SUM :
-                                                  8'd0;
-
-    assign SQUARE_DONE =
-        (state == 4'b0111) ||
-        (state == 4'b1000) ||
-        (state == 4'b1001);
-
-    assign DONE =
-        (state == 4'b1000) ||
-        (state == 4'b1001);
-
-    assign DISPLAY_DATA = {
-        input_latched,
-        4'h0,
-        high,
-        low
-    };
+    assign DISPLAY_DATA = { input_latched, 4'h0, high, low };
 
     wire [6:0] segments;
     wire [3:0] ONECOLD_RAW;
