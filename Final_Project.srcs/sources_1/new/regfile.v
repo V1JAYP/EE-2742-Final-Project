@@ -7,21 +7,20 @@ input [2:0] WADDR,
 input [7:0] WDATA,
 input [2:0] RADDR_X, RADDR_Y, RADDR_Z,
 output [7:0] X,Y,Z
-input [7:0] d000, d001, d010, d011, d100, d101, d110, d111
 
     );
     wire [7:0] L, q0, q1, q2, q3, q4, q5, q6, q7;
-    3'b000: y = d000;
+
 
     
-    assign L[0] = WE & (WADDR == 3'd0);
-    assign L[1] = WE & (WADDR == 3'd1);
-    assign L[2] = WE & (WADDR == 3'd2);
-    assign L[3] = WE & (WADDR == 3'd3);
-    assign L[4] = WE & (WADDR == 3'd4);
-    assign L[5] = WE & (WADDR == 3'd5);
-    assign L[6] = WE & (WADDR == 3'd6);
-    assign L[7] = WE & (WADDR == 3'd7);
+    assign L[0] = WE & (WADDR == 3'b000);
+    assign L[1] = WE & (WADDR == 3'b001);
+    assign L[2] = WE & (WADDR == 3'b010);
+    assign L[3] = WE & (WADDR == 3'b011);
+    assign L[4] = WE & (WADDR == 3'b100);
+    assign L[5] = WE & (WADDR == 3'b101);
+    assign L[6] = WE & (WADDR == 3'b110);
+    assign L[7] = WE & (WADDR == 3'b111);
     
     reg8b r0 (.L(L[0]), .N(WDATA), .CLK(CLK), .PRS_N(1'b1), .CLR_N(RST_N), .Q(q0));
     reg8b r1 (.L(L[1]), .N(WDATA), .CLK(CLK), .PRS_N(1'b1), .CLR_N(RST_N), .Q(q1));
