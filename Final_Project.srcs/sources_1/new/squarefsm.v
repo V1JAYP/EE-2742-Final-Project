@@ -14,7 +14,7 @@ output DONE
     wire [15:0] DISPLAY_DATA;
     reg [3:0] state, next_state, input_latched;
     reg go_prev;
-    assign start_pulse = GO & `go_prev;
+    assign start_pulse = GO & ~go_prev;
     wire[7:0] adder_a, adder_b;
     assign adder_a =
         (state == 4'b0101) ? DATA_X :

@@ -12,7 +12,7 @@ output COUT
 
 
 wire [8:0] C;
-assign c[0] = CIN;
+assign C[0] = CIN;
 
 FA fa0(C1[0], C2[0], C[0], SUM[0], C[1]);
 FA fa1(C1[1], C2[1], C[1], SUM[1], C[2]);
